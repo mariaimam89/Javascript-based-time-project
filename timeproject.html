@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Complete Bootstrap 4 Website Layout</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+    <link href="style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://m.w3newbie.com/you-tube.css">
+</head>
+
+<body>
+
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+        <div class="container-fluid">
+            <a href="#" class="navbar-brand" id="img"><img src="time.png" height="60px" width="60px"></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navResponsive">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Home</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Services</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Team</a>
+
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Blog </a>
+
+                        </li>
+                    </ul>
+
+                </div>
+
+
+
+
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="row wellcome text-center jumbotron">
+            <div class="col-12">
+                <img src="timegif.gif" height="100px" width="100px">
+
+            </div>
+
+            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9 col-xl-10">
+
+                <h1 class="display-4">Current time is:<span id="time"></span></h1>
+                <p class="lead">Welcome to our website.. We have got you covered. Our website is designed to upadte you with cureent time. You can also discovr time zones of different countries</p>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12  col-xl-12">
+                <button class="fun" data-toggle="collapse" data-target="#emoji">click to Discover Different countries Time Zones</button>
+                <div id="emoji" class="collapse" padding>
+                    <div class="container">
+                        <div class="row text-center">
+                            <h1 class="display-4">
+                                American Time Zone  <span id="new">
+
+                                </span>
+                            </h1>
+                          
+                
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <script>
+        let a;
+        let date;
+        let time;
+        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+            a = new Date();
+            date = a.toLocaleDateString(undefined, options);
+            time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds();
+            document.getElementById('time').innerHTML = time + "<br>on " + date;
+            abs = a.toLocaleString('en-US', {timeZone: 'America/New_York' });
+        document.getElementById('new').innerHTML = abs;
+        }, 1000);
+
+        let abs;
+        
+    </script>
+
+</body>
+
+</html>
