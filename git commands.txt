@@ -1,0 +1,22 @@
+
+git config --global user.name "mariaimam89"
+git config --global user.email "maria.imam16@gmail.com"
+
+touch .gitignore  //add the files which you dont want to push  git will ignore these files
+git init // initialise git
+git add . //all the files will come in staging area excluding the filkes in  git ignore
+git commit -m "Initial Commit" 
+git status //just to check working tree is clean or not
+
+
+git remote add origin git@github.com:mariaimam89/Javascript-based-time-project.git
+$ ssh-keygen -t rsa -b 4096 -C "maria.imam16@gmail.com"
+$ cat /c/Users/maria/.ssh/id_rsa.pub
+$ git push origin master
+
+
+//to add the change
+git status
+git add .
+git commit -m "Added cheatsheet"
+git push origin master
